@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -24,12 +26,14 @@ function Home() {
       <div className="row">
         {recipes.map((recipe) => (
           <div key={recipe.id} className="col-md-4 mb-4">
+            <Link to={`/recipe/${recipe.id}`} className="text-decoration-none text-dark">
             <div className="card">
               <img src={recipe.image} className="card-img-top" alt={recipe.title} />
               <div className="card-body">
                 <h5 className="card-title">{recipe.title}</h5>
               </div>
             </div>
+            </Link>
           </div>
         ))}
       </div>
