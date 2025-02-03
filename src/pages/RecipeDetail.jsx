@@ -32,16 +32,16 @@ function RecipeDetail() {
       <button className="btn btn-secondary my-3" onClick={() => navigate(-1)}>
         ⏪ Go Back
       </button>
-      <h1 className="text-center">{recipe.title}</h1>
+      <h1 className="text-center text-white">{recipe.title}</h1>
       <img src={recipe.image} alt={recipe.title} className="img-fluid rounded mx-auto d-block" />
-      <h4 className="mt-4">Ingredients:</h4>
-      <ul>
+      <h4 className="mt-4 text-white">Ingredients:</h4>
+      <ul className="recipe-text">
         {recipe.extendedIngredients.map((ingredient) => (
           <li key={ingredient.id}>{ingredient.original}</li>
         ))}
       </ul>
-      <h4 className="mt-4">Instructions:</h4>
-      <p dangerouslySetInnerHTML={{ __html: recipe.instructions }}></p>
+      <h4 className="mt-4 text-white">Instructions:</h4>
+      <p className="recipe-text" dangerouslySetInnerHTML={{ __html: recipe.instructions }}></p>
     </div>
   );
 }
