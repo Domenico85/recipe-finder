@@ -5,7 +5,7 @@ function SearchBar({ onSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim() === "") return; // Prevent empty search
+    if (query.trim() === "") return;
     onSearch(query);
   };
 
